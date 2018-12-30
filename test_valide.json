@@ -1,0 +1,17 @@
+{ 
+  "menu": "Fichier", 
+  "commandes": [ 
+      {
+          "titre": "Nouveau", 
+          "action":"CreateDoc"
+      }, 
+      {
+          "titre": "Ouvrir", 
+          "action": "OpenDoc"
+      }, 
+      {
+          "titre": "Fermer",
+          "action": "CloseDoc"
+      }
+   ] 
+} 

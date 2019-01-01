@@ -8,7 +8,9 @@
 
 int main (int argc, char *argv[])
 {
+	/*Les options de commande*/
 	int opt;
+	/*compteur des paramètres de commande*/
 	int cpt_i, cpt_h, cpt_f, cpt_o, cpt_t;
 	cpt_f = cpt_h = cpt_i = cpt_o = cpt_t = 0;
 	

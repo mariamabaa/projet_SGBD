@@ -7,7 +7,8 @@
     so that the code can be reentrant.
 */
 
-typedef struct JSON_checker_struct {
+typedef struct JSON_checker_struct
+{
     int valid;
     int state;
     int depth;

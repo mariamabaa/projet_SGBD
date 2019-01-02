@@ -1,5 +1,4 @@
 class LoginTest extends TestCase
-{class LoginTest extends TestCase
 {
 
 /** @test */

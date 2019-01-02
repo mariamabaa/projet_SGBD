@@ -277,7 +277,7 @@ JSON_checker_char(JSON_checker jc, int next_char)
 */
     int next_class, next_state;
 /*
-    Determine the character's class.
+    Determine the class of character.
 */
     if (jc->valid != GOOD) {
         return FALSE;

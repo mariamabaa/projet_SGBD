@@ -1,0 +1,19 @@
+From: andrew cooke <andrew@...>
+
+Date: Thu, 14 Jul 2011 16:57:48 -0400
+
+I need to create a document for a horribly complicated schema in XML, from C,
+using libxml2.  Since the document has a schema I am bootstrapping myself by
+creating an empty document, testing it, and then adding elements etc as needed
+until it validates.  At that point, hopefully, I will (1) have a good starting
+point and (2) understand libxml2 much more than I do right now.
+
+But anyway, just to get there has taken fair amount of effort, so here's the
+code, in case it will help anyone else (some parts removed to protect the
+innocent - mainly logging).  Also, logging and handling of failures is
+incomplete.
+
+Andrew
+
+PS This is on CentOS 5.4, although I had to install libxml from
+https://github.com/projecthydra/libxml2 to handle my particular schema.

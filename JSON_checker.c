@@ -35,7 +35,8 @@ SOFTWARE.
     a significant reduction in the size of the state transition table.
 */
 
-enum classes {
+enum classes
+{
     C_SPACE,  /* space */
     C_WHITE,  /* other whitespace */
     C_LCURB,  /* {  */
@@ -70,7 +71,8 @@ enum classes {
     NR_CLASSES
 };
 
-static int ascii_class[128] = {
+static int ascii_class[128] =
+{
 /*
     This array maps the 128 ASCII characters into character classes.
     The remaining Unicode characters should be mapped to C_ETC.
@@ -101,7 +103,8 @@ static int ascii_class[128] = {
 /*
     The state codes.
 */
-enum states {
+enum states 
+{
     GO,  /* start    */
     OK,  /* ok       */
     OB,  /* object   */
@@ -137,7 +140,8 @@ enum states {
 };
 
 
-static int state_transition_table[NR_STATES][NR_CLASSES] = {
+static int state_transition_table[NR_STATES][NR_CLASSES] =
+{
 /*
     The state transition table takes the current state and the current symbol,
     and returns either a new state or an action. An action is represented as a
@@ -182,7 +186,8 @@ static int state_transition_table[NR_STATES][NR_CLASSES] = {
 /*
     These modes can be pushed on the stack.
 */
-enum modes {
+enum modes 
+{
     MODE_ARRAY,
     MODE_DONE,
     MODE_KEY,
@@ -297,7 +302,8 @@ JSON_checker_char(JSON_checker jc, int next_char)
     Get the next state from the state transition table.
 */
     next_state = state_transition_table[jc->state][next_class];
-    if (next_state >= 0) {
+    if (next_state >= 0)
+    {
 /*
     Change the state.
 */
@@ -305,46 +311,54 @@ JSON_checker_char(JSON_checker jc, int next_char)
 /*
     Or perform one of the actions.
 */
-    } else {
-        switch (next_state) {
+    } else
+    {
+        switch (next_state)
+        {
 /* empty } */
         case -9:
-            if (!pop(jc, MODE_KEY)) {
+            if (!pop(jc, MODE_KEY))
+            {
                 return reject(jc);
             }
             jc->state = OK;
             break;
 
 /* } */ case -8:
-            if (!pop(jc, MODE_OBJECT)) {
+            if (!pop(jc, MODE_OBJECT))
+            {
                 return reject(jc);
             }
             jc->state = OK;
             break;
 
 /* ] */ case -7:
-            if (!pop(jc, MODE_ARRAY)) {
+            if (!pop(jc, MODE_ARRAY))
+            {
                 return reject(jc);
             }
             jc->state = OK;
             break;
 
 /* { */ case -6:
-            if (!push(jc, MODE_KEY)) {
+            if (!push(jc, MODE_KEY))
+            {
                 return reject(jc);
             }
             jc->state = OB;
             break;
 
 /* [ */ case -5:
-            if (!push(jc, MODE_ARRAY)) {
+            if (!push(jc, MODE_ARRAY))
+            {
                 return reject(jc);
             }
             jc->state = AR;
             break;
 
 /* " */ case -4:
-            switch (jc->stack[jc->top]) {
+            switch (jc->stack[jc->top])
+            {
             case MODE_KEY:
                 jc->state = CO;
                 break;
@@ -358,12 +372,14 @@ JSON_checker_char(JSON_checker jc, int next_char)
             break;
 
 /* , */ case -3:
-            switch (jc->stack[jc->top]) {
+            switch (jc->stack[jc->top])
+            {
             case MODE_OBJECT:
 /*
     A comma causes a flip from object mode to key mode.
 */
-                if (!pop(jc, MODE_OBJECT) || !push(jc, MODE_KEY)) {
+                if (!pop(jc, MODE_OBJECT) || !push(jc, MODE_KEY)) 
+                {
                     return reject(jc);
                 }
                 jc->state = KE;
@@ -380,7 +396,8 @@ JSON_checker_char(JSON_checker jc, int next_char)
 /*
     A colon causes a flip from key mode to object mode.
 */
-            if (!pop(jc, MODE_KEY) || !push(jc, MODE_OBJECT)) {
+            if (!pop(jc, MODE_KEY) || !push(jc, MODE_OBJECT)) 
+            {
                 return reject(jc);
             }
             jc->state = VA;
@@ -405,7 +422,8 @@ JSON_checker_done(JSON_checker jc)
     true. This function deletes the JSON_checker and returns true if the JSON
     text was accepted.
 */
-    if (jc->valid != GOOD) {
+    if (jc->valid != GOOD)
+    {
         return FALSE;
     }
     int result = jc->state == OK && pop(jc, MODE_DONE);

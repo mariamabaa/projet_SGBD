@@ -20,7 +20,8 @@ int c;
   JSON_checker jc = new_JSON_checker(20);
   while ((c = fgetc(f_in)) != EOF)
     {
-        if (c <= 0) {
+        if (c <= 0)
+	{
             break;
         }
         if (!JSON_checker_char(jc, c)) {

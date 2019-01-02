@@ -8,12 +8,15 @@
 
 int main (int argc, char *argv[])
 {
+	/*Les options de commande*/
 	int opt;
+	/*compteur des paramètres de commande*/
 	int cpt_i, cpt_h, cpt_f, cpt_o, cpt_t;
 	cpt_f = cpt_h = cpt_i = cpt_o = cpt_t = 0;
 	
 	char * format;
-	while ((opt = getopt(argc, argv, "i:h:f:o:t")) != -1) {
+	while ((opt = getopt(argc, argv, "i:h:f:o:t")) != -1)
+	{
 		switch (opt)
 		{
 		case 'i':
@@ -34,31 +37,40 @@ int main (int argc, char *argv[])
 		break;
 		}	
 	}
-	if (cpt_i == 1){
-		if (strcmp(format, "json")==0 || strcmp(format, "xml")==0) {
-			if (cpt_h==1 ^ cpt_f==1) {
-				if (cpt_o ==1){
-					if (cpt_t == 1){
+	if (cpt_i == 1)
+	{
+		if (strcmp(format, "json")==0 || strcmp(format, "xml")==0)
+		{
+			if (cpt_h==1 ^ cpt_f==1) 
+			{
+				if (cpt_o ==1)
+				{
+					if (cpt_t == 1)
+					{
 						printf("traces\n");
 						printf("...\n");
 					}
 				}
-				else {
+				else 
+				{
 					printf("Entrez un argument pour la sortie\n");
 					exit(EXIT_FAILURE);
 				}
 			}
-			else {
+			else 
+			{
 				printf("entrez un flux http [-h] ou un fichier [-f]\n");
 				exit (EXIT_FAILURE);
 			}
 		}
-		else {
+		else
+		{
 			printf("Entrez un format de fichier en entrée correct [-i] (xml ou json) \n");
 			exit(EXIT_FAILURE);
 			}
 		}
-		else {
+		else
+		{
 			printf("Précisez le format de données en entrée\n");
 			exit(EXIT_FAILURE);
 		}

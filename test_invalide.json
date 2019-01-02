@@ -1,2 +1,19 @@
-gdsgd
-bn
+class LoginTest extends TestCase
+{class LoginTest extends TestCase
+{
+
+/** @test */
+    public function auth()
+    {
+       $this->withoutMiddleware();
+    $this->visit('/login')
+        ->post('/login', ['example@example.com', "password"=>"1234"])
+        ->seeJson([
+            "login"=>"true"
+        ]);
+    $this->get('/dashboard');
+
+}
+
+}
+  

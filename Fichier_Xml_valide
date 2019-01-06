@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf8"?>
+<personnes>
+    <personne>
+        <nom></nom>
+        <numero></numero>
+        <ville>
+            <nom></nom>
+            <coord></coord>
+        </ville>
+    </personne>
+    <personne>
+        <nom></nom>
+        <numero></numero>
+        <ville>
+            <nom></nom>
+            <coord></coord>
+        </ville>
+    </personne>
+    <personne>
+        <nom></nom>
+        <numero></numero>
+        <ville>
+            <nom></nom>
+            <coord></coord>
+        </ville>
+    </personne>
+</personnes>

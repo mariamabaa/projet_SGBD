@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diagramme>
+		<entite id="e1">
+			<nomEntite>
+				Client
+			</nomEntite>
+			<attribut>
+				<numero>
+					C01
+				</numero>
+				<nom>
+					BA
+				</nom>
+				<prenom>
+					Mariama
+				</prenom>
+				<ville>
+					Mermoz
+				</ville>
+				<téléphone>
+					221777447004
+				</téléphone>
+			</attribut>
+		
+
+		</entite>
+
+		<entite id="e2">
+			<nomEntite>
+				Fournisseur
+			</nomEntite>
+			<attribut>
+				<numero>
+					F01
+				</numero>
+				<nom>
+					KONE
+				</nom>
+				<prenom>
+					Adja Aida
+				</prenom>
+				<ville>
+					Mariste
+				</ville>
+				<téléphone>
+					221704356056
+				</téléphone>
+			</attribut>
+
+		</entite>
+
+		<association id="a1">
+			<nomAssos>
+				Contacter
+			</nomAssos>
+			<attribut>
+				<date>
+					10/01/1997
+				</date>
+			</attribut>
+			
+		</association>
+</diagramme>

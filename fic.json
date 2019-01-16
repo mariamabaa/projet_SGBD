@@ -1,0 +1,31 @@
+[
+    
+    {
+    "Contacter": {
+      "date": "10/01/1997",
+      "Client": [
+        {
+          "numeroClient": "C01",
+          "nomClient": "BA",
+          "prénomClient": "Mariama",
+          "villeClient": "Mermoz",
+          "téléphoneClient": "221777447004"
+        }
+      ]
+    }
+    },
+    {
+    
+      "Fournisseur": [
+        {
+         
+          "numeroFournisseur": "F01",
+          "nomFournisseur": "KONE",
+          "prénomFournisseur": "Adja Aida",
+          "villeFournisseur": "Mariste",
+          "téléphoneFournisseur": "221704356056"
+        }
+      ]
+    
+    }
+]

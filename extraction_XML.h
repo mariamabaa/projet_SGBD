@@ -19,6 +19,5 @@ struct node {
 	struct node *next;
 };
 
-void insert(char *a, char *b, char *c, char *d, char *e, char *f);
 void traverse_dom_trees(svg* psvg,xmlNode * a_node);
 int XXtest();

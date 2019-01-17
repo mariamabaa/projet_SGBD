@@ -8,9 +8,11 @@ Projet SGBD :		Reverse Engineering – Ingenierie inversée
 
 Langage utilisé :	langage C
 
-Membres :	MARIAMA  BA 
+Membres :		
+			MARIAMA  BA 
 
-		      ADJA  AIDA  KONE
+		      	ADJA  AIDA  KONE
+			
 Lien github : github.com/mariamabaa/projet_SGBD
 
 Commande : gcc main.c JSON_checker.c cJSON.c extraction_XML.c extraction_JSON.c svg.c  `xml2-config --cflags` -std=c11 -o main `xml2-config --libs`
@@ -43,6 +45,7 @@ JSON_checker.c Le JSON_checker.
 JSON_checker.h Le fichier d'en-tête JSON_checker.
 
 main.c Un exemple d'application.
+
             ▪ cJSON 
 
 cJSON a pour objectif d'être l'analyseur le plus stupide possible avec lequel vous pouvez effectuer votre travail. C'est un fichier unique de C et un fichier d'en-tête unique.
@@ -53,15 +56,18 @@ JSON est mieux décrit ici: http://www.json.org/ C'est comme XML, mais sans gras
             ▪ svg.c
 
 C’est  une bibliothèque qui peut être compilée et réutilisée dans différents projets, ainsi qu’une application cliente pour la tester et en démontrer l’utilisation. La bibliothèque comprendra les éléments suivants: 
+
     • Une structure pour contenir le texte du fichier SVG 
     • Une fonction pour créer un nouveau document SVG vide 
     • Fonctions permettant d'ajouter des cercles, des lignes, des rectangles, du texte et des ellipses, ainsi que de remplir l'arrière-plan 
+    
     • Une fonction pour finaliser le document SVG (essentiellement fermer la balise SVG) 
     • Une fonction pour l'enregistrer en fichier 
     • Une fonction pour imprimer le contenu du document 
     • Une fonction "libre" très importante pour libérer toute la mémoire utilisée 
 
 Malgré sa simplicité, il présente de nombreuses fonctionnalités C, ainsi que les principes de base nécessaires à la création d’une bibliothèque de codes réutilisable, notamment: 
+
     • utiliser une structure pour contenir le document et les données associées 
     • créer un ensemble de fonctions pour manipuler le document 
     • gestion de la mémoire: le redouté malloc, realloc et les fonctions gratuites! 
@@ -74,8 +80,10 @@ Malgré sa simplicité, il présente de nombreuses fonctionnalités C, ainsi que
         1. XML :
             ▪ void traverse_dom_trees(svg* psvg,xmlNode * a_node);
 la fonction traverse_dom_trees permet de parcourir les noeuds et ensuite afficher leur valeur.
+
             ▪ int XXtest();
 XXtest qui permet d'afficher les entités, attributs et associations du fichier fourni en paramètre.
+
         2. JSON 
 
             ▪ char** get_attributs_entite(cJSON* json, char** attributs, int* n_attributs);

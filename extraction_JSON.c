@@ -262,7 +262,7 @@ void get_nombre_entites_associations(cJSON* json, int* nb_entites, int* nb_assoc
 }
 
 
-
+/* déclaration de la fonction Jtest qui permet d'afficher les entités, attributs et associations du fichier fourni en paramètre*/
 int Jtest(svg* psvg,char *fileName)
 {
 

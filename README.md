@@ -9,15 +9,13 @@ Projet SGBD :		Reverse Engineering – Ingenierie inversée
 Langage utilisé :	langage C
 
 Membres :		
-			MARIAMA  BA 
-
-		      	ADJA  AIDA  KONE
+			MARIAMA  BA et ADJA  AIDA  KONE
 			
 Lien github : github.com/mariamabaa/projet_SGBD
 
 Commande : gcc main.c JSON_checker.c cJSON.c extraction_XML.c extraction_JSON.c svg.c  `xml2-config --cflags` -std=c11 -o main `xml2-config --libs`
 
-    1. Librairies utilisées :
+ #   1. Librairies utilisées :
         1. XML
             ▪ Libxml2 
 Libxml2 est une bibliothèque utilisée pour l'analyse de documents XML.
@@ -25,10 +23,10 @@ Dans le cadre de notre projet, nous avons inclus les fichiers libxml/tree.h et l
 Pour compiler un programme utilisant la libxml2, il faudra les options suivantes :
 $ xml2-config --cflags
 -I/usr/include/libxml2
-# chemin d'inclusion des fichiers .h
+-- chemin d'inclusion des fichiers .h
 $ xml2-config --libs
 -lxml2 -lz -lpthread -lm
-# les librairies dynamiques pour l'édition de liens
+-- les librairies dynamiques pour l'édition de liens
 
 
         2. JSON
@@ -76,7 +74,7 @@ Malgré sa simplicité, il présente de nombreuses fonctionnalités C, ainsi que
     • svg.h - le fichier d'en-tête de la bibliothèque 
     • svg.c - l'implémentation de la bibliothèque 
 
-    2. Fonctions utilisées :
+#    2. Fonctions utilisées :
         1. XML :
             ▪ void traverse_dom_trees(svg* psvg,xmlNode * a_node);
 la fonction traverse_dom_trees permet de parcourir les noeuds et ensuite afficher leur valeur.

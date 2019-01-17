@@ -13,7 +13,9 @@ Membres :
 			
 Lien github : github.com/mariamabaa/projet_SGBD
 
-Commande : gcc main.c JSON_checker.c cJSON.c extraction_XML.c extraction_JSON.c svg.c  `xml2-config --cflags` -std=c11 -o main `xml2-config --libs`
+Commande compilation : gcc main.c JSON_checker.c cJSON.c extraction_XML.c extraction_JSON.c svg.c  `xml2-config --cflags` -std=c11 -o main `xml2-config --libs`
+Commande exécution (XML): ./main -i xml -f fic.xml -o xml.svg 
+Commande exécution (XML): ./main -i json -f fic.json -o json.svg 
 
  #   1. Librairies utilisées :
         1. XML
